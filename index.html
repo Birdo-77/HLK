@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLK Marketing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            background-color: #f3f3f3;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .banner{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .banner .hlk{
+            width: 80%;
+            height: auto;
+        }
+
+        .banner h1{
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .banner .arrow{
+            width: 30%;
+            height: auto;
+        }
+
+        .site{
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 40%;
+            height: 100vh;
+        }
+
+        .site img{
+            height: 100%;
+            width: auto;
+            cursor: pointer;
+        }
+
+        .modal{
+            display: none;
+            background-color: rgba(0, 0, 0, 0.411);
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .modal section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            height: 100%;
+        }
+
+        .menu{
+            height: 95%;
+            width: auto;
+        }
+
+        .social{
+            margin-left: 40px;
+            width: 40%;
+            height: auto;
+        }
+
+        #close{
+            align-self: flex-start;
+            background-color: transparent;
+            color: white;
+            font-size: 2rem;
+            border: 0;
+            cursor: pointer;
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="banner">
+            <img src="./src/hlk.jpg" alt="" class="hlk">
+            <h1>Decole sua empresa!</h1>
+            <img src="./src/arrow.png" alt="" class="arrow">
+        </section>
+        <section class="site">
+            <img src="./src/site.png" alt="" id="takeMe">
+        </section>
+    </main>
+    <div class="modal">
+        <section>
+            <button id="close">X</button>
+            <img src="./src/menu.jpg" alt="" class="menu">
+            <img src="./src/social.jpg" alt="" class="social">
+        </section>
+    </div>
+    <script>
+        document.getElementById("takeMe").onclick = function () {
+            document.querySelector(".modal").style = "display: flex;"
+        };
+
+        document.getElementById("close").onclick = function (e) {
+            document.querySelector(".modal").style = "display: none;"
+            e.stopPropagation();
+        };
+    </script>
+</body>
+</html>
